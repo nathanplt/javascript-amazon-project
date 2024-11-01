@@ -3,6 +3,8 @@ import {products} from '../data/products.js';
 
 let productsHTML = '';
 
+updateCartQuantity();
+
 products.forEach(product => {
   productsHTML += `
     <div class="product-container">

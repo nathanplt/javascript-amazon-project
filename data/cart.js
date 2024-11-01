@@ -1,10 +1,10 @@
-export const cart = [];
+export const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 export function addToCart(productId) {
   let matchingItem;
 
   cart.forEach((cartItem) => {
-    if (item.productId === productId) {
+    if (cartItem.productId === productId) {
       matchingItem = cartItem;
     }
   });
@@ -17,4 +17,5 @@ export function addToCart(productId) {
       quantity: 1
     });
   }
+  localStorage.setItem('cart', JSON.stringify(cart));
 }
